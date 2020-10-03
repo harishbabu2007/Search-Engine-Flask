@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+</head>
+<style>
+    .searchbar{
+        margin-left: 10px;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .bar{
+        border-radius: 40px;
+        box-shadow: 2px 3px 0px -2px #ccc;
+        padding:10px;
+        border:0px;
+        outline: none;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #CCC;
+        width: 500px;
+    }
+
+    .bar:hover{
+        box-shadow: 3px 6px 7px -3px #ccc;
+    }
+
+    .bar:focus {
+        box-shadow: 3px 6px 7px -3px #ccc;
+    }
+
+    .results {
+        margin-left: 200px;
+    }
+</style>
+<body>
+    <form action="/search" method="POST">
+        <form action="#" method="POST">
+            <div class="searchbar">
+                <input name="query" type="text submit" placeholder="Search the web" class="bar" value="{{query}}" required>
+            </div>
+        </form>
+    </form>
+    <hr>
+    <div class="results">
+        {%for i in results%}
+            <a href="{{i}}">{{i}}</a><br><br>
+        {%endfor%}
+    </div>
+    <br><br>
+    <footer class="page-footer font-small blue fixed-bottom">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+          <a href="/">Harish Babu</a>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+</html>
