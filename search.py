@@ -2,50 +2,53 @@
 from bs4 import BeautifulSoup
 from requests import get
 
+"""
+old algorithm(very very slow)
 
-# def search(inp):
-# 	inp = inp.replace(" ", "")
-# 	inp = inp.lower()
+def search(inp):
+    inp = inp.replace(" ", "")
+    inp = inp.lower()
 
-# 	start = "https://www."
+    start = "https://www."
 
-# 	com = ".com"
-# 	uin = ".in"
-# 	us = ".us"
-# 	ca = ".ca"
-# 	coin = ".co.in"
-# 	org = ".org"
-# 	it = ".it"
-# 	io = ".io"
-# 	au = ".au"
-# 	couk = ".co.uk"
-# 	iss = ".is"
-# 	es = ".es"
-# 	kr = ".kr"
-# 	cokr = ".co.kr"
-# 	ly = ".ly"
-# 	cous = ".co.us"
+    com = ".com"
+    uin = ".in"
+    us = ".us"
+    ca = ".ca"
+    coin = ".co.in"
+    org = ".org"
+    it = ".it"
+    io = ".io"
+    au = ".au"
+    couk = ".co.uk"
+    iss = ".is"
+    es = ".es"
+    kr = ".kr"
+    cokr = ".co.kr"
+    ly = ".ly"
+    cous = ".co.us"
 
-# 	domains = [com, uin, org, us, ca, it, io, coin, au, couk, iss, es, kr, cokr, ly, cous]
-# 	url = start + inp
+    domains = [com, uin, org, us, ca, it, io, coin, au, couk, iss, es, kr, cokr, ly, cous]
+    url = start + inp
 
-# 	results = {}
+    results = {}
 
-# 	for i in range(len(domains)):
-# 	    try:
-# 	        html = request.urlopen(url + domains[i]).read()
-# 	        soup = BeautifulSoup(html, 'html.parser')
+    for i in range(len(domains)):
+        try:
+            html = request.urlopen(url + domains[i]).read()
+            soup = BeautifulSoup(html, 'html.parser')
 
-# 	        title = soup.title.text.strip() 
-# 	        title = title.replace("-&nbsp", "")
+            title = soup.title.text.strip() 
+            title = title.replace("-&nbsp", "")
 
-# 	        results[f"{url}{domains[i]}"] = title
-# 	    except:
-# 	        continue
+            results[f"{url}{domains[i]}"] = title
+        except:
+            continue
 
-# 	return results
+    return results
+"""
 
-
+# using google search
 def search(term, num_results=10, lang="en"):
     usr_agent = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
