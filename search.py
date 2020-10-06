@@ -49,6 +49,7 @@ def search(inp):
 """
 
 # using google search
+# faster response
 def search(term, num_results=10, lang="en"):
     usr_agent = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
